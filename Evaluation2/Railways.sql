@@ -75,16 +75,16 @@ select* from passengers;
  
  
  -- Queries
- 
+ #1
  select p.first_name,p.last_name,t.t_name, t.sourcee,t.destination from passengers p
  join trains on p.t_id =t.t_id;
- 
+ #2
  select t_name, count(*) from trains group by p_id;
- 
+ #3
  select first_name,last_name,count(t_id) from passengers group by t_id having count(t_id)>1;
- 
+ #4
  select t_name from trains where book_id is null;
- 
+ #5
  select t_name from trains where (select sum(p_id) from bookings);
  
  
